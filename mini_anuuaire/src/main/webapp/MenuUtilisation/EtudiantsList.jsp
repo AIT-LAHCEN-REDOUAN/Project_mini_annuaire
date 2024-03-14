@@ -1,9 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<%-- 
-    Document   : EtudiantsList
-    Created on : May 17, 2023, 10:08:08 PM
-    Author     : KAOUTAR
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

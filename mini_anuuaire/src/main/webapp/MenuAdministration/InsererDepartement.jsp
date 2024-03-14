@@ -1,10 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%-- 
-    Document   : InsererDepartement
-    Created on : May 18, 2023, 4:49:16 PM
-    Author     : KAOUTAR
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 @WebServlet(name = "DepartementInserer", urlPatterns = {"/Departements/Insertion"})
 public class DepartementInserer extends HttpServlet {
@@ -51,7 +51,7 @@ public class DepartementInserer extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/WEB-INF/MenuAdministration/InsererDepartement.jsp").forward(request,response);
+        this.getServletContext().getRequestDispatcher("/webapp/MenuAdministration/InsererDepartement.jsp").forward(request,response);
     }
 
     /**

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 @WebServlet(name = "EtudiantsByHint", urlPatterns = {"/EtudiantsByHint"})
 public class EtudiantsByHint extends HttpServlet {

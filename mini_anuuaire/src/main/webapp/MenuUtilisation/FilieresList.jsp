@@ -1,9 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- 
-    Document   : FilieresList
-    Created on : May 18, 2023, 4:17:01 PM
-    Author     : KAOUTAR
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

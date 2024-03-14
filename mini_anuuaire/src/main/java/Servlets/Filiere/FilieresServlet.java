@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 @WebServlet(name = "FilieresServlet", urlPatterns = {"/Filieres"})
 public class FilieresServlet extends HttpServlet {
@@ -63,7 +63,7 @@ public class FilieresServlet extends HttpServlet {
                 ArrayList<Filiere> filieres = this.filiereDAO.getAll();
                 request.setAttribute("departements",departements);
                 request.setAttribute("filieres",filieres);
-                this.getServletContext().getRequestDispatcher("/WEB-INF/MenuUtilisation/FilieresList.jsp").forward(request,response);
+                this.getServletContext().getRequestDispatcher("/webapp/MenuUtilisation/FilieresList.jsp").forward(request,response);
     
             } catch (SQLException ex) {
                 System.out.println(ex);

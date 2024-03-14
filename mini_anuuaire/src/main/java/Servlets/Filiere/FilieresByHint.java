@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 /**
  *
- * @author KAOUTAR
+ *
  */
 @WebServlet(name = "FilieresByHint", urlPatterns = {"/FilieresByHint"})
 public class FilieresByHint extends HttpServlet {

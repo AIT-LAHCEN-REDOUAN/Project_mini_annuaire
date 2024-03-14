@@ -7,7 +7,7 @@ package Entity;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 public class Departement {
     private String label;

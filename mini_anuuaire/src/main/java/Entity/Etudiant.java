@@ -6,7 +6,7 @@ package Entity;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 public class Etudiant {
     private Integer CNE;

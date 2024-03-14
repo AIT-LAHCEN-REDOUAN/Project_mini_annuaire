@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 @WebServlet(name = "EtudiantsServlet", urlPatterns = {"/Etudiants"})
 public class EtudiantsServlet extends HttpServlet {
@@ -65,7 +65,7 @@ public class EtudiantsServlet extends HttpServlet {
             ArrayList<Departement> departements = this.departementsDAO.getAll();
             request.setAttribute("departements",departements);
             request.setAttribute("etudiants",etudiants);
-            this.getServletContext().getRequestDispatcher("/WEB-INF/MenuUtilisation/EtudiantsList.jsp").forward(request,response);
+            this.getServletContext().getRequestDispatcher("/webapp/MenuUtilisation/EtudiantsList.jsp").forward(request,response);
         } catch (SQLException ex) {
             System.out.println(ex);
         }

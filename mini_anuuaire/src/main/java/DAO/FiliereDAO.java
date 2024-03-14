@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author KAOUTAR
+
  */
 public class FiliereDAO {
     public ArrayList<Filiere> getAll() throws SQLException{  

@@ -19,7 +19,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 @WebServlet(name = "DepartementsServlet", urlPatterns = {"/Departements"})
 public class DepartementsServlet extends HttpServlet {
@@ -56,7 +56,7 @@ public class DepartementsServlet extends HttpServlet {
             
             ArrayList<Departement> departements = this.departementsDAO.getAll();
             request.setAttribute("departements",departements);
-            this.getServletContext().getRequestDispatcher("/WEB-INF/MenuUtilisation/DepartementsList.jsp").forward(request,response);
+            this.getServletContext().getRequestDispatcher("/webapp/MenuUtilisation/DepartementsList.jsp").forward(request,response);
         } catch (SQLException ex) {
             System.out.println(ex);
         }

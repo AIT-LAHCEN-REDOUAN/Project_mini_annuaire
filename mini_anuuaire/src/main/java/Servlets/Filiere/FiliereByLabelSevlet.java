@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 @WebServlet(name = "FiliereByLabelSevlet", urlPatterns = {"/FiliereByLabelSevlet"})
 public class FiliereByLabelSevlet extends HttpServlet {

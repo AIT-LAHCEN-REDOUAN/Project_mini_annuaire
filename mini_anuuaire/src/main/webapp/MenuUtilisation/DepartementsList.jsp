@@ -1,10 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%-- 
-    Document   : DepartementsList
-    Created on : May 18, 2023, 4:31:54 PM
-    Author     : KAOUTAR
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -6,7 +6,7 @@ package Entity;
 
 /**
  *
- * @author KAOUTAR
+ *
  */
 public class Filiere {
     private String label;

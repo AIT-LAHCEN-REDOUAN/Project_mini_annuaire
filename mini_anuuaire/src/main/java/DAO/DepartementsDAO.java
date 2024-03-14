@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author KAOUTAR
+
  */
 public class DepartementsDAO {
     public ArrayList<Departement> getAll() throws SQLException{  
