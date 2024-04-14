@@ -1,72 +1,46 @@
 package DB;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-import java.sql.Statement;
+import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.PreparedStatement;
+import java.sql.Statement;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 
 public class JDBC {
-    //private String dbName;
-    //private String userName;
-    //private String passWord;
-    
-    static Connection connectionObject;
-    
-   /* public JDBC(String dbName,String userName,String passWord){
-        this.dbName = dbName;
-        this.userName = userName;
-        this.passWord = passWord;
+    static DataSource dataSource;
 
-
-    }*/
-    public static void connect() throws ClassNotFoundException {
-
-        //Class.forName("com.mysql.jdbc.Driver");
+    static {
         try {
-            // Establish connection if not already connected
-            if (connectionObject == null || connectionObject.isClosed()) {
-                connectionObject = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniannuaire", "root", "");
-            }
-        } catch (SQLException e) {
-            System.out.println("Failed to connect to the database:");
+            Context context = new InitialContext();
+            dataSource = (DataSource) context.lookup("java:/comp/env/jdbc/miniannuaire");
+        } catch (NamingException e) {
             e.printStackTrace();
         }
     }
 
+    public static void connect() {
+        // No need to manually establish connection, as DataSource manages it
 
-    public static ResultSet select(String query) throws SQLException{
-        try {
-            connect();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        Statement statement = JDBC.connectionObject.createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
-        return resultSet;
-       
-    }
-    
-    public static Integer execut(String query) throws SQLException{
-        try {
-            connect();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        PreparedStatement ps = JDBC.connectionObject.prepareStatement(query);
-        return ps.executeUpdate();        
     }
 
-    public static void disconnect() throws SQLException {
-        if (connectionObject != null && !connectionObject.isClosed()) {
-            connectionObject.close();
+    public static ResultSet select(String query) throws SQLException {
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement()) {
+            return statement.executeQuery(query);
         }
     }
-    
+
+    public static Integer execut(String query) throws SQLException {
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement()) {
+            return statement.executeUpdate(query);
+        }
+    }
+
+    public static void disconnect() {
+        // No need to manually close connection, as DataSource manages it
+    }
 }
